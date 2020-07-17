@@ -4,7 +4,8 @@ const paragraph = document.querySelector("p");
 function getRequest(cb) {
   request.addEventListener("readystatechange", () => {
     if ((request.readyState === 4) & (request.status === 200)) {
-      cb(undefined, request.responseText);
+      const data = JSON.parse(request.responseText);
+      cb(undefined, data);
     } else {
       console.log("ERROR!", undefined);
     }
