@@ -6,7 +6,7 @@ function getRequest(cb) {
     if ((request.readyState === 4) & (request.status === 200)) {
       const data = JSON.parse(request.responseText);
       cb(undefined, data);
-    } else {
+    } else if (request.readyState === 4) {
       console.log("ERROR!", undefined);
     }
   });
@@ -22,6 +22,5 @@ function getRequest(cb) {
 getRequest((err, data) => {
   if (!err) {
     console.log(data);
-    paragraph.innerText = data;
   }
 });
