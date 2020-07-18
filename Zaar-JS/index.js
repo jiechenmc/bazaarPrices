@@ -24,3 +24,13 @@ getRequest((err, data) => {
     console.log(data);
   }
 });
+
+// Promise Example
+
+function getSomething() {
+  return new Promise((resolve, reject) => {
+    //fetch
+    resolve("Some Data");
+    //reject("ERROR!");
+  });
+}
