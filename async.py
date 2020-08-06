@@ -22,7 +22,7 @@ async def main():
 
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+d1, d2, d3 = loop.run_until_complete(main())
 loop.close()
 
 print(d1)
