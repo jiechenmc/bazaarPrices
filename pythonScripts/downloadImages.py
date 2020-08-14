@@ -11,7 +11,7 @@ with open("pythonScripts/sources.txt", "r") as f:
         file_name = re.search(pattern, line).group(0).upper()
         r = requests.get(url, stream=True)
         r.raw.decode_content = True
-        directory = "../pics/"
+        directory = "../assets/"
 
         try:
             with open(directory + file_name, "wb") as f:
