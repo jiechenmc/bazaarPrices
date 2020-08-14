@@ -9,9 +9,13 @@ const getItem = async (item) => {
 };
 
 const ITEM = "ENCHANTED_OAK_LOG";
-getItem(ITEM).then((data) => {
-  itemName = data.productId;
-  buyPrice = data.buyPrice;
-  sellPrice = data.sellPrice;
-  console.log(itemName, buyPrice, sellPrice);
-});
+getItem(ITEM)
+  .then((data) => {
+    itemName = data.productId;
+    buyPrice = data.buyPrice;
+    sellPrice = data.sellPrice;
+    console.log(itemName, buyPrice, sellPrice);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
