@@ -12,7 +12,7 @@ itemForm.addEventListener("submit", (e) => {
     itemName = data.productId;
     buyPrice = Math.round(data.buyPrice);
     sellPrice = Math.round(data.sellPrice);
-
+    //
     itemNameDOM.textContent = itemName;
     buyPriceDOM.textContent = `BP:${buyPrice}`;
     sellPriceDOM.textContent = `SP:${sellPrice}`;
