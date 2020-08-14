@@ -15,7 +15,7 @@ for td in tds:
     )  # There are also <noscript> tags with <img> tags so this is nesscary as the <img> that I want is in the <a> tag
     for image in images:
         source = re.sub(
-            r"/revision.+", "", image.attrs["data-src"]
+            r"\/revision.+", "", image.attrs["data-src"]
         )  # Remove /revision.+ so the iamge will always be its original size 430x430
         sources.append(source + "\n")
 with open("sources.txt", "w") as f:
