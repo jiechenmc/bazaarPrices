@@ -1,42 +1,48 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Bazaar Prices</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Bzaar Price</title>
-</head>
+  <body>
+    <div class="container my-5 mx-auto">
+      <h1 class="text-muted text-center my-4">Bazaar Prices</h1>
 
-<body>
-  <div class="container my-5 mx-auto">
-    <h1 class="text-muted text-center my-4">Bzaar Price</h1>
+      <form class="change-location my-4 text-center text-muted">
+        <label for="item">Enter a item for price information</label>
+        <input type="text" name="item" class="form-control p-4" />
+      </form>
 
-    <form class="change-location my-4 text-center text-muted">
-      <label for="item">Enter a item for price information</label>
-      <input type="text" name="item" class="form-control p-4" />
-    </form>
-
-    <div class="card shadow-lg rounded">
-      <img src="https://via.placeholder.com/400x300" class="time card-img-top" />
-      <div class="icon bg-light mx-auto text-center">
-        <!-- icon here later -->
-      </div>
-      <div class="text-muted text-uppercase text-center details">
-        <h5 class="my-3">Item Name</h5>
-        <div class="my-3">Price Information</div>
-        <div class="display-4 my-4">
-          <span>Buy Price</span>
-          <span>Sell Price</span>
+      <div class="card shadow-lg rounded">
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D"
+          class="time card-img-top itemImage"
+        />
+        <div class="icon bg-light mx-auto text-center">
+          <!-- icon here later -->
+        </div>
+        <div class="text-muted text-uppercase text-center details">
+          <h5 class="my-3 itemName">Item Name</h5>
+          <div class="my-3">Price Information</div>
+          <div class="display-4 my-4">
+            <span class="buyPrice">Buy Price</span>
+            <br />
+            <span class="sellPrice">Sell Price</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="scripts/forecast.js"></script>
-  <script src="scripts/app.js"></script>
-</body>
-
+    <script src="scripts/wrangle.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>
