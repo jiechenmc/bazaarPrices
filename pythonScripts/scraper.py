@@ -18,6 +18,6 @@ for td in tds:
             r"\/revision.+", "", image.attrs["data-src"]
         )  # Remove /revision.+ so the iamge will always be its original size 430x430
         sources.append(source + "\n")
-with open("sources.txt", "w") as f:
+with open("pythonScripts/sources.txt", "w") as f:
     sources[-1] = sources[-1].replace("\n", "")
     f.writelines(sources)

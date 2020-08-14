@@ -16,7 +16,6 @@ itemForm.addEventListener("submit", (e) => {
     itemNameDOM.textContent = itemName;
     buyPriceDOM.textContent = `BP:${buyPrice}`;
     sellPriceDOM.textContent = `SP:${sellPrice}`;
-    imageDOM.src = `../../pics/${itemName}.png`;
-    console.log(imageDOM.src)
+    imageDOM.src = `../../pics/${itemName}.PNG`;
   });
 });
