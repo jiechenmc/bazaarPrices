@@ -1,4 +1,20 @@
 from requests_html import HTMLSession
+
 session = HTMLSession()
 resp = session.get("https://hypixel-skyblock.fandom.com/wiki/Bazaar")
-resp.html.render()
+resp.html.render(scrolldown=1, timeout=100)
+
+table = resp.html.find(".wikitable", first=True)
+tds = table.find("tr > td")
+sources = []
+
+for td in tds:
+    images = td.find(
+        "a > img"
+    )  # There are also <noscript> tags with <img> tags so this is nesscary as the <img> that I want is in the <a> tag
+    for image in images:
+        source = image.attrs["data-src"]
+        sources.append(source + "\n")
+with open("sources.txt", "w") as f:
+    sources[-1] = sources[-1].replace("\n", "")
+    f.writelines(sources)
