@@ -7,10 +7,11 @@ pattern = re.compile(r"[a-zA-z0-9]+\.png")
 with open("sources.txt", "r") as f:
     lines = f.readlines()
     for line in lines:
-        line = line.replace("\n", "")
-        url = line
+        url = line.replace("\n", "")
         file_name = re.search(pattern, line).group(0)
-        r = requests.get(url)
+
+        r = requests.get(url, stream=True)
+        r.raw.decode_content = True
         directory = "pics/"
 
         try:
@@ -22,3 +23,5 @@ with open("sources.txt", "r") as f:
                 shutil.copyfileobj(r.raw, f)
         except:
             print(file_name)
+r.close()
+print("ALL IMAGES DOWNLOADED")
