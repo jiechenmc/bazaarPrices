@@ -1,4 +1,5 @@
 import requests
+import re
 
 with open("sources.txt", "r") as f:
     lines = f.readlines()

@@ -1,4 +1,5 @@
 from requests_html import HTMLSession
+import re
 
 session = HTMLSession()
 resp = session.get("https://hypixel-skyblock.fandom.com/wiki/Bazaar")
@@ -13,7 +14,9 @@ for td in tds:
         "a > img"
     )  # There are also <noscript> tags with <img> tags so this is nesscary as the <img> that I want is in the <a> tag
     for image in images:
-        source = image.attrs["data-src"]
+        source = re.sub(
+            r"/revision.+", "", image.attrs["data-src"]
+        )  # Remove /revision.+ so the iamge will always be its original size 430x430
         sources.append(source + "\n")
 with open("sources.txt", "w") as f:
     sources[-1] = sources[-1].replace("\n", "")
