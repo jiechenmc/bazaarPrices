@@ -8,7 +8,7 @@ with open("sources.txt", "r") as f:
     lines = f.readlines()
     for line in lines:
         url = line.replace("\n", "")
-        file_name = re.search(pattern, line).group(0)
+        file_name = re.search(pattern, line).group(0).upper()
 
         r = requests.get(url, stream=True)
         r.raw.decode_content = True

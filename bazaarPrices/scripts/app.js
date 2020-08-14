@@ -6,7 +6,7 @@ const imageDOM = document.querySelector(".itemImage");
 
 itemForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const item = itemForm.item.value.trim();
+  const item = itemForm.item.value.trim().toUpperCase();
   itemForm.reset();
   getItem(item).then((data) => {
     itemName = data.productId;
@@ -16,5 +16,7 @@ itemForm.addEventListener("submit", (e) => {
     itemNameDOM.textContent = itemName;
     buyPriceDOM.textContent = `BP:${buyPrice}`;
     sellPriceDOM.textContent = `SP:${sellPrice}`;
+    imageDOM.src = `../../pics/${itemName}.png`;
+    console.log(imageDOM.src)
   });
 });
