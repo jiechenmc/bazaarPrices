@@ -8,14 +8,25 @@ itemForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const item = itemForm.item.value.trim().toUpperCase();
   itemForm.reset();
-  getItem(item).then((data) => {
-    itemName = data.productId;
-    buyPrice = Math.round(data.buyPrice);
-    sellPrice = Math.round(data.sellPrice);
-    
-    itemNameDOM.textContent = itemName;
-    buyPriceDOM.textContent = `BP:${buyPrice}`;
-    sellPriceDOM.textContent = `SP:${sellPrice}`;
-    imageDOM.src = `/bazaarPrices/assets/${itemName}.PNG`;
-  });
+  getItem(item)
+    .then((data) => {
+      itemName = data.productId;
+      buyPrice = Math.round(data.buyPrice);
+      sellPrice = Math.round(data.sellPrice);
+
+      itemNameDOM.textContent = itemName;
+      buyPriceDOM.textContent = `BP:${buyPrice}`;
+      sellPriceDOM.textContent = `SP:${sellPrice}`;
+      // Github Pages
+      imageDOM.src = `/bazaarPrices/assets/${itemName}.PNG`;
+      // Local
+      //imageDOM.src = `assets/${itemName}.PNG`;
+    })
+    .catch((err) => {
+      itemNameDOM.textContent = "INVALID ITEM";
+      buyPriceDOM.textContent = "LIST OF AVAILABLE ITEMS";
+      sellPriceDOM.textContent = "HYPERLINK";
+      imageDOM.src =
+        "https://upload.wikimedia.org/wikipedia/en/9/93/HypixelLogo.png";
+    });
 });
