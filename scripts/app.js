@@ -24,8 +24,8 @@ itemForm.addEventListener("submit", (e) => {
     })
     .catch((err) => {
       itemNameDOM.textContent = "INVALID ITEM";
-      buyPriceDOM.textContent = "LIST OF AVAILABLE ITEMS";
-      sellPriceDOM.textContent = "HYPERLINK";
+      buyPriceDOM.textContent = "Check Repository for";
+      sellPriceDOM.textContent = "Available Items";
       imageDOM.src =
         "https://upload.wikimedia.org/wikipedia/en/9/93/HypixelLogo.png";
     });
