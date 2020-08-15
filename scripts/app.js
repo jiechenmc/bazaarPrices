@@ -18,9 +18,9 @@ itemForm.addEventListener("submit", (e) => {
       buyPriceDOM.textContent = `BP:${buyPrice}`;
       sellPriceDOM.textContent = `SP:${sellPrice}`;
       // Github Pages
-      //imageDOM.src = `/bazaarPrices/assets/${itemName}.PNG`;
+      imageDOM.src = `/bazaarPrices/assets/${itemName}.PNG`;
       // Local
-      imageDOM.src = `assets/${itemName}.PNG`;
+      //imageDOM.src = `assets/${itemName}.PNG`;
     })
     .catch((err) => {
       itemNameDOM.textContent = "INVALID ITEM";
