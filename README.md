@@ -1,4 +1,3 @@
-# bazaarPrices
 # All Available Products
 BROWN_MUSHROOM
 INK_SACK:3
