@@ -21,6 +21,7 @@ itemForm.addEventListener("submit", (e) => {
       imageDOM.src = `/bazaarPrices/assets/${itemName}.PNG`;
       // Local
       //imageDOM.src = `assets/${itemName}.PNG`;
+      imageDOM.alt = "Not Available";
     })
     .catch((err) => {
       itemNameDOM.textContent = "INVALID ITEM";
