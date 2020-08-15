@@ -1,3 +1,6 @@
+# View the GitHub Page
+https://jiechenmc.github.io/bazaarPrices/
+
 # All Available Products
 BROWN_MUSHROOM
 INK_SACK:3
