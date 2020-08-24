@@ -4,7 +4,7 @@ import shutil
 import os
 
 pattern = re.compile(r"[a-zA-z0-9]+\.png")
-with open("pythonScripts/sources.txt", "r") as f:
+with open("sources.txt", "r") as f:
     lines = f.readlines()
     for line in lines:
         url = line.replace("\n", "")
